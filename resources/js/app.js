@@ -1,18 +1,17 @@
 import './bootstrap';
 import { createApp } from 'vue/dist/vue.esm-bundler';
-import HabitInfo from './components/HabitInfo.vue';
-import ExecuteButton from './components/ExecuteButton.vue';
-import ProgressBar from './components/ProgressBar.vue';
+import Habits from './components/Habits.vue'
+import { createPinia } from 'pinia'
 
 import Alpine from 'alpinejs';
 window.Alpine = Alpine;
+
+const pinia = createPinia()
 
 Alpine.start();
 
 createApp({
     components: {
-        'habit-info': HabitInfo,
-        'execute-button': ExecuteButton,
-        'progress-bar': ProgressBar
+        'habits': Habits
     }
-}).mount('#app');
+}).use(pinia).mount('#app');
