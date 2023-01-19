@@ -1,7 +1,7 @@
 import './bootstrap';
+import { createPinia } from 'pinia'
 import { createApp } from 'vue/dist/vue.esm-bundler';
 import Habits from './components/Habits.vue'
-import { createPinia } from 'pinia'
 
 import Alpine from 'alpinejs';
 window.Alpine = Alpine;

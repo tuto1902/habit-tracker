@@ -5,11 +5,11 @@ import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
     // Uncomment this section when runnin with WSL2
-    // server: {
-    //     hmr: {
-    //         host: 'localhost'
-    //     }
-    // },
+    server: {
+        hmr: {
+            host: 'localhost'
+        }
+    },
     plugins: [
         laravel({
             input: [
