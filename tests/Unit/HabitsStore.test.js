@@ -30,4 +30,13 @@ describe('Habits Store', () => {
 
         expect(habits.percent(habitIndex)).toBe(33)
     })
+
+    it('keeps the executions less than or equal to times per day', () => {
+        habits.list[habitIndex].times_per_day = 3
+        habits.list[habitIndex].executions_count = 3
+
+        habits.newExecution(habitIndex)
+
+        expect(habits.list[habitIndex].executions_count).toBe(3)
+    })
 })
