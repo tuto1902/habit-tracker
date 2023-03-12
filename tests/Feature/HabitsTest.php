@@ -128,6 +128,15 @@ class HabitsTest extends TestCase
         );
     }
 
+    public function test_habit_executions_can_be_created()
+    {
+        $habit = Habit::factory()->create();
+
+        $this->withoutExceptionHandling()->postJson("/api/habits/{$habit->id}/execution");
+
+        $this->assertEquals(1, $habit->executions->count());
+    }
+
     public function provideBadHabitData()
     {
         $habit = Habit::factory()->make();
