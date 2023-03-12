@@ -38,4 +38,9 @@ class HabitsApiController extends Controller
         $habit->delete();
         return HabitResource::collection(Habit::withCount('executions')->get());
     }
+
+    public function execution(Request $request, Habit $habit)
+    {
+        $habit->executions()->create();
+    }
 }
